@@ -41,7 +41,7 @@ st.subheader("📌 เลือกฟีเจอร์เพื่อดูก�
 feature = st.selectbox("เลือกฟีเจอร์", dt.columns[:-1])
 
 # วาดกราฟ boxplot
-st.write(f"### 🎯 Boxplot: {feature} แยกตามชนิดของดอกไม้")
+st.write(f"### 🎯 Boxplot: {feature}")
 fig, ax = plt.subplots()
 sns.boxplot(data=dt, x='HeartDisease', y=feature, ax=ax)
 st.pyplot(fig)
@@ -87,8 +87,8 @@ if st.button("ทำนายผล"):
    out=Knn_model.predict(x_input)
 
    if out[0] == 1:
-    st.image("./img/Bad_heart.png")
-   else:
     st.image("./img/Good_heart.png")
+   else:
+    st.image("./img/Bad_heart.png")
 else:
     st.write("ไม่ทำนาย")
