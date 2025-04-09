@@ -61,35 +61,35 @@ if st.checkbox("แสดง Pairplot (ใช้เวลาประมวล�
 st.markdown(html_8, unsafe_allow_html=True)
 st.markdown("")
 
-A1 = st.number_input("กรุณาเลือกข้อมูล A1")
-A2 = st.number_input("กรุณาเลือกข้อมูล A2")
-A3 = st.number_input("กรุณาเลือกข้อมูล A3")
-A4 = st.number_input("กรุณาเลือกข้อมูล A4")
-A5 = st.number_input("กรุณาเลือกข้อมูล A5")
-A6 = st.number_input("กรุณาเลือกข้อมูล A6")
-A7 = st.number_input("กรุณาเลือกข้อมูล A7")
-A8 = st.number_input("กรุณาเลือกข้อมูล A8")
-A9 = st.number_input("กรุณาเลือกข้อมูล A9")
-A10 = st.number_input("กรุณาเลือกข้อมูล A10")
-A11 = st.number_input("กรุณาเลือกข้อมูล A11")
+a1 = st.number_input("กรุณาเลือกข้อมูล a1")
+a2 = st.number_input("กรุณาเลือกข้อมูล a2")
+a3 = st.number_input("กรุณาเลือกข้อมูล a3")
+a4 = st.number_input("กรุณาเลือกข้อมูล a4")
+a5 = st.number_input("กรุณาเลือกข้อมูล a5")
+a6 = st.number_input("กรุณาเลือกข้อมูล a6")
+a7 = st.number_input("กรุณาเลือกข้อมูล a7")
+a8 = st.number_input("กรุณาเลือกข้อมูล a8")
+a9 = st.number_input("กรุณาเลือกข้อมูล a9")
+a10 = st.number_input("กรุณาเลือกข้อมูล a10")
+a11 = st.number_input("กรุณาเลือกข้อมูล a11")
 
 if st.button("ทำนายผล"):
     #st.write("ทำนาย")
-   dt = pd.read_csv("./data/Heart.csv") 
+    #dt = pd.read_csv("./data/iris-3.csv") 
    X = dt.drop('HeartDisease', axis=1)
-   y = dt.variety   
+   y = dt.HeartDisease   
 
    Knn_model = KNeighborsClassifier(n_neighbors=3)
    Knn_model.fit(X, y)  
     
-   x_input = np.array([[A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]])
+   x_input = np.array([[a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11]])
    st.write(Knn_model.predict(x_input))
    
    out=Knn_model.predict(x_input)
 
-   if out[0] == 'HeartDisease':
-    st.image("./img/Bad_heart.png")
-   else:      
-    st.image("./img/Good_heart.png")
+   if out[0] == 1:
+    st.image("./img/heart1.jpg")
+   else:
+    st.image("./img/heart2.jpg")
 else:
     st.write("ไม่ทำนาย")
