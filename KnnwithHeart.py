@@ -82,16 +82,14 @@ if st.button("ทำนายผล"):
    Knn_model = KNeighborsClassifier(n_neighbors=3)
    Knn_model.fit(X, y)  
     
-   x_input = np.array([[pt_len, pt_wd, sp_len, sp_wd]])
+   x_input = np.array([[A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11]])
    st.write(Knn_model.predict(x_input))
    
    out=Knn_model.predict(x_input)
 
-   if out[0] == 'Setosa':
-    st.image("./img/iris1.jpg")
-   elif out[0] == 'Versicolor':       
-    st.image("./img/iris2.jpg")
-   else:
-    st.image("./img/iris3.jpg")
+   if out[0] == 'HeartDisease':
+    st.image("./img/Bad_heart.png")
+   else:      
+    st.image("./img/Good_heart.png")
 else:
     st.write("ไม่ทำนาย")
