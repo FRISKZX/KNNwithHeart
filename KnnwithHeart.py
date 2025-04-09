@@ -8,19 +8,15 @@ import matplotlib.pyplot as plt
 st.title('การจำแนกข้อมูลด้วยเทคนิค Machine Learning')
 st.image("./img/Stein_gate.jpg")
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(3)
 
 with col1:
    st.header("Versicolor")
-   st.image("./img/iris1.jpg")
+   st.image("./img/Bad_heart.png")
 
 with col2:
-   st.header("Verginiga")
-   st.image("./img/iris2.jpg")
-
-with col3:
-   st.header("Setosa")
-   st.image("./img/iris3.jpg")
+   st.header("การทำนายโรคหัวใจ")
+   st.image("./img/Good_heart.png")
 
    html_7 = """
 <div style="background-color:#c5f18a;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
